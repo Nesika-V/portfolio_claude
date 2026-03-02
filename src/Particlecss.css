@@ -1,0 +1,44 @@
+/* ================================================================
+   ADD THESE RULES TO YOUR App.css
+   (or paste at the bottom of your existing file)
+   ================================================================ */
+
+/* 1 ── Make sure everything above z-index:0 sits on top of canvas */
+nav,
+section,
+footer,
+.hero-content-streamlined {
+  position: relative;
+  z-index: 1;
+}
+
+/* 2 ── Body / root background must match canvas bg so edges blend */
+:root {
+  --bg-deep: #07070f;
+}
+
+body,
+#root {
+  background: var(--bg-deep);
+  min-height: 100vh;
+}
+
+/* 3 ── Optional: subtle glass effect on cards so the animation
+        glows through rather than being hidden behind solid white */
+.project-card,
+.stat-card,
+.skill-category,
+.timeline-content,
+.contact-wrapper,
+.tool-card {
+  background: rgba(255, 255, 255, 0.04)  !important;
+  backdrop-filter: blur(12px)            !important;
+  -webkit-backdrop-filter: blur(12px)    !important;
+  border: 1px solid rgba(212, 175, 55, 0.12) !important;
+}
+
+/* 4 ── Nav glass */
+.nav.scrolled {
+  background: rgba(7, 7, 15, 0.75) !important;
+  backdrop-filter: blur(18px)       !important;
+}
